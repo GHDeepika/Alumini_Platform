@@ -1,12 +1,12 @@
 # Student Success Platform
 
 ## Folder Structure
-- **infra/** → Docker, env configs
-- **db/** → SQL scripts, migrations
-- **hasura/** → Hasura metadata, migrations
-- **web/** → Frontend
-- **automations/** → n8n workflows
-- **docs/** → Documentation, PPTs, README
+- `infra/` → Docker, env configs
+- `db/` → SQL scripts, migrations
+- `hasura/` → Hasura metadata
+- `web/` → Frontend
+- `automations/` → n8n workflows
+- `docs/` → Docs, PPTs, reports
 
 ## Roles
 - **DB** → db/
