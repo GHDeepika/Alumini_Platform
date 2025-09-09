@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres:13
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: alumni_db
+      POSTGRES_USER: alumni_user
+      POSTGRES_PASSWORD: alumni_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  hasura:
+    image: hasura/graphql-engine:latest
+    ports:
+      - "8080:8080"
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://alumni_user:alumni_pass@postgres:5432/alumni_db
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_ADMIN_SECRET: myhasurasecret
+    depends_on:
+      - postgres
+
+  adminer:
+    image: adminer:latest
+    ports:
+      - "8081:8080"
+
+volumes:
+  pgdata:
