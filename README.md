@@ -1,4 +1,4 @@
-# Student Success Platform
+# #Student Success Platform
 
 ## Folder Structure
 - `infra/` → Docker, env configs
